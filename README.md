@@ -2,7 +2,7 @@
 
 This is an MC sever written in python using FastMCP. It uses a rust binary to perform the file operations.
 
-Binary can be downloaded using [link](https://github.com/JustAnotherSoloDev/dir-summary/releases/download/2026.02.08.20.39.41/artifacts.zip) when the mcp server receives any command it calls the rust binary to do the processing quickly and returns the result to the LLM.
+Binary can be downloaded using [link](https://github.com/JustAnotherSoloDev/dir-summary/releases) when the mcp server receives any command it calls the rust binary to do the processing quickly and returns the result to the LLM.
 
 ## How to run.
 
@@ -49,7 +49,12 @@ calculate size of D:\Python\dir-summary and show me the details of the files and
 get the largest file in D:\Python\dir-summary.
 
 ```
+```
+Get a  breakdown of all the files types and their sizes for the directory D:\github\dir-summary and display the summarized data in a table. If a file type occurs multiple time make sure you sum the size and show them as a single record instead of showing two records.
+```
 
+
+![output](example.png)
 
 
 
