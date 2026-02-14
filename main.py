@@ -7,8 +7,8 @@ app = FastMCP()
 path_to_exe="bin\\dir-summary.exe"
 path_to_dll="bin\\dirSummary.dll"
 
-executor=Executor(type="exe",path=path_to_exe)
-#executor=Executor(type="dll",path=path_to_dll)
+#executor=Executor(type="exe",path=path_to_exe)
+executor=Executor(type="dll",path=path_to_dll)
 
 if not (os.path.exists(path_to_exe)):
     raise FileNotFoundError("path to rust binary is incorrect")
@@ -35,7 +35,8 @@ def calculate_directory_stats(report_path:str,directory_path:str):
     """
     this tool will calculate the stats for a directory that is present in the report that was generated using the create_file_report 
     function path to report and the path to the directory that needs to be summarized must be provided as input to proceed.
-    The output will contain the total number of files and total size of the directory.
+    The output will contain the total number of files(just the file count) and total size of the directory. 
+    this does not contain any details about individual files or any other details about the files.
     
     :param report_path: Path to the report that will be used to calculate the stats
     :type report_path: str
@@ -55,6 +56,7 @@ def generate_stats_for_all_directories(report_path:str):
     """
     this tool will create the summary of the report provided as the input. This will create a summary csv file that will contain all the 
     directories present in the csv and their stats. This tool will return the path to the csv that contains the summary.
+    the report will only contain the file count of and not details about the files and their types.
     
     :param report_path: path to the report that needs to be summarized
     :type report_path: str
